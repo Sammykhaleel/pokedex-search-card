@@ -64,12 +64,18 @@ let pokemonRepository = (function () {
       let card = $(
         '<div class="card mt-5" style="width: 18rem; margin:13px;"></div>'
       );
-      let image = $('<img class="card-img-top" alt="..." style="width:35%;">');
+      let image = $(
+        '<img class="card-img-top mx-auto" alt="..." style="width:35%;">'
+      );
       let title = $('<h5 class="card-title">' + pokemon.name + "</h5>");
       image.attr("src", pokemon.imageUrlAnimated);
       let body = $('<div class="card-body" style="text-align: center;"></div>');
       let button = $(
-        '<button type="button" class="btn" style="background-color: #d88780; color: white" data-toggle="modal" data-target="#exampleModal">See profile</button>'
+        '<button type="button" class="btn" style="background-color: #d88780; color: white" data-toggle="modal" data-target="#exampleModal">' +
+          "See " +
+          pokemon.name +
+          " profile" +
+          "</button>"
       );
 
       //append
