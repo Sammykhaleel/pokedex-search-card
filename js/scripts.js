@@ -179,22 +179,22 @@ pokemonRepository.loadList().then(function () {
 });
 
 function search() {
-  var input, filter, ul, li, a, i, txtValue;
+  var input, filter, row, card, a, i, txtValue;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  // li = ul.getElementsByTagName("");
-  li = ul.querySelectorAll(".card");
-  // console.log(li[0].querySelector(".card-body").querySelector(".card-title"));
-  for (i = 0; i < li.length; i++) {
-    // a = li[i].getElementsByTagName("a")[0];
-    a = li[i].querySelector(".card-body").querySelector(".card-title");
+  row = document.getElementById("myRow");
+  // card = row.getElementsByTagName("");
+  card = row.querySelectorAll(".card");
+  // console.log(card[0].querySelector(".card-body").querySelector(".card-title"));
+  for (i = 0; i < card.length; i++) {
+    // a = card[i].getElementsByTagName("a")[0];
+    a = card[i].querySelector(".card-body").querySelector(".card-title");
     console.log(a.innerText);
     txtValue = a.textContent || a.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
+      card[i].style.display = "";
     } else {
-      li[i].style.display = "none";
+      card[i].style.display = "none";
     }
   }
 }
